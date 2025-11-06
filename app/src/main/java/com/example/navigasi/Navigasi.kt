@@ -6,12 +6,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 
 
 enum class Navigasi {
     Formulirku,
-    Data
+    Detail
 }
 
 @Composable
@@ -25,7 +26,14 @@ fun DataApp(
             startDestination = Navigasi.Formulirku.name,
 
             modifier = Modifier.padding(isiRuang)){
-            
+            composable(route = Navigasi.Formulirku.name){
+                FormIsian(
+                    //pilihanJK = JenisK.map {id -> konteks.resources.getString(id)},
+                    onSubmitBtnClick = {
+                            navController.navigate(Navigasi.Detail.name)
+                    }
+                )
+            }
         }
     }
 }
