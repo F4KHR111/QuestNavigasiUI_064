@@ -32,7 +32,6 @@ import com.example.navigasi.R
 @Composable
 fun FormIsian(
     jenisK: List<String> = listOf("Laki Laki", "Perempuan"),
-    onSubmitBtnClick: () -> Unit,
     OnSubmitBtnClick: () -> Unit
 ) {
     Scaffold(
